@@ -1,24 +1,16 @@
-# README
+**# DB設計**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+**## users table**
 
-* Ruby version
 
-* System dependencies
+|   Column   |     Type     |             Options                    |
+|:-----------|-------------:|:--------------------------------------:|
+|    name    |    string    | index:true, null: false, unuque: true  |
+|   email    |    string    | null: false, unuque: true              |
 
-* Configuration
+**## Association**
+*### has_many :groups, through: members
+*### has_many :messages
+*### has_many :members
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
