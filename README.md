@@ -1,24 +1,67 @@
-# README
+# **DB設計**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## **users table**
 
-* Ruby version
 
-* System dependencies
+|   Column   |     Type     |             Options                    |
+|:-----------|-------------:|:--------------------------------------:|
+|    name    |    string    | null: false, unique: true              |
+|   email    |    string    | null: false, unique: true              |
 
-* Configuration
 
-* Database creation
+<dl>
+  <dt>Association</dt>
+  <dd>has_many :groups, through: group_users</dd>
+  <dd>has_many :messages</dd>
+  <dd>has_many :group_users</dd>
+</dl>
 
-* Database initialization
 
-* How to run the test suite
+## **groups table**
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+|   Column   |     Type     |             Options                    |
+|:-----------|-------------:|:--------------------------------------:|
+|     name   |    string    | index:true, null: false                |
 
-* ...
+
+<dl>
+  <dt>Association</dt>
+  <dd>has_many :users, through: group_users</dd>
+  <dd>has_many :messages</dd>
+  <dd>has_many :group_users</dd>
+</dl>
+
+
+## **group_users table**
+
+
+|   Column   |     Type     |             Options                    |
+|:-----------|-------------:|:--------------------------------------:|
+| user_id    |    integer   | foreign_key: true                      |
+| group_id   |    integer   | foreign_key: true                      |
+
+
+<dl>
+  <dt>Association</dt>
+  <dd>belongs_to :user</dd>
+  <dd>belongs_to :group</dd>
+</dl>
+
+## **messages table**s
+
+
+|   Column   |     Type     |             Options                    |
+|:-----------|-------------:|:--------------------------------------:|
+|   body     |    text      |                                        |
+|   image    |    string    |                                        |
+|   user_id  |    integer   | foreign_key: true                      |
+|   group_id |    integer   | foreign_key: true                      |
+
+
+<dl>
+  <dt>Association</dt>
+  <dd>belongs_to :user</dd>
+  <dd>belongs_to :group</dd>
+</dl>
