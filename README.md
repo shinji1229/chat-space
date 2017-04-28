@@ -23,7 +23,7 @@
 
 |   Column   |     Type     |             Options                    |
 |:-----------|-------------:|:--------------------------------------:|
-| group_name |    string    | index:true, null: false                |
+|     name   |    string    | index:true, null: false                |
 
 
 <dl>
@@ -54,8 +54,8 @@
 
 |   Column   |     Type     |             Options                    |
 |:-----------|-------------:|:--------------------------------------:|
-|   body     |    text      | index:true,                            |
-|   image    |    string    | index:true,                            |
+|   body     |    text      |                                        |
+|   image    |    string    |                                        |
 |   user_id  |    integer   | foreign_key: true                      |
 |   group_id |    integer   | foreign_key: true                      |
 
