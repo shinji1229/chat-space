@@ -1,4 +1,31 @@
-header
-  &state
-  &user_icon
-  &group_icon
+.notice チャットグループが作成されました。
+
+.chat-side
+ .chat-side__user
+  .chat-side__user_name shinji
+  %i.fa.fa-cog.fa-fw
+  %i.fa.fa-pencil-square-o.fa-fw
+
+
+
+ .chat-side__groups
+  .chat-side__groups_name tech:camp
+  .chat-side__groups_message まだメッセージはありません
+
+.chat-main
+ .chat-main__header
+  %a{:href => ""} Edit
+  .chat-main__header_name tech:camp
+  .chat-main__header_member Member: shinji,yuuki
+ .chat-main__body
+  .chat-main__body_name shinji
+  .chat-main__body_date 2017/04/29
+  .chat-main__body_message お腹すいた
+ .chat-main__footer
+  %form
+   %textarea{:placeholder => "type a message"}
+   %label{:for => "file_photo"}
+    %i.fa.fa-picture-o
+    %input#file_photo{:style => "display:none;", :type => "file"}
+   %input{:type => "submit", :value => "Send"}
+
