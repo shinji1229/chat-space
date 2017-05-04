@@ -11,8 +11,10 @@
       float: left;
       width: 50%;
     }
-    @include clearfix();
-    clear: both;
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
   }
 
   &__header {
@@ -62,7 +64,7 @@
         letter-spacing: 1px;
       }
     }
-  }
+
 
   .btn {
     display: inline-block;
