@@ -11,18 +11,23 @@
       float: left;
       width: 50%;
     }
-    @include clearfix();
-    clear: both;
+    &:after {
+      clear: both;
+      content: "";
+      display: block;
+    }
   }
 
-  &__header {
+  .account-page__header {
     h2 {
       margin-bottom: 10px;
       letter-spacing: 3px;
       font-size: 40px;
       font-weight: 200;
 
-      @include clearfix();
+      &:after {
+        content: '';
+        display: block;
         width: 60px;
         margin-top: 5px;
         border-bottom: 1px solid $blue;
@@ -37,7 +42,7 @@
 
     .btn {
       margin-top: 20px;
-      color: $white;
+      color: #fff;
       background-color: #ccc;
       font-size: 14px;
     }
@@ -56,7 +61,9 @@
         font-size: 11px;
       }
     }
+
     &-input {
+      input {
         width: 100%;
         padding: 10px;
         letter-spacing: 1px;
@@ -83,7 +90,7 @@
   }
 
   .field-label {
-    .field_with_errors {
+    &_with_errors {
       display: inline-block;
       color: #d65f4c;
       font-weight: 400;
@@ -91,7 +98,7 @@
   }
 
   .field-input {
-    .field_with_errors {
+    &_with_errors {
       position: relative;
 
       &:after {
