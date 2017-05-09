@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.create(name: group_params[:text])
+    @group = Group.create(group_params)
   end
 
   def edit
@@ -14,6 +14,6 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.permit(:text)
+    params.require(:review).permit(:text)
   end
 end
