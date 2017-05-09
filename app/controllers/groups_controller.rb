@@ -1,15 +1,15 @@
 class GroupsController < ApplicationController
 
   def new
-    @groups = Group.new
+    @group = Group.new
   end
 
   def create
-    @groups = Group.create(name: group_params[:text])
+    @group = Group.create(name: group_params[:text])
   end
 
   def edit
-    @groups = Group.find()
+    @group = Group.find()
   end
 
   private
