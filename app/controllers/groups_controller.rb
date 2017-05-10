@@ -6,6 +6,11 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.create(group_params)
+    if @group.save
+      redirect_to :root
+    else
+      render :new
+    end
   end
 
   def edit
@@ -14,6 +19,6 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:text ,{:user_ids =>[]})
+    params.require(:group).permit(:name, user_ids: [])
   end
 end
