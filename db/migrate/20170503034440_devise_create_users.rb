@@ -32,8 +32,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
 
 
       t.timestamps null: false
-      has_many :groups, through: group_users
-      has_many :group_users
     end
 
     add_index :users, :email,                unique: true
