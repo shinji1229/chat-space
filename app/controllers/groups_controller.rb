@@ -9,6 +9,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to :root
     else
+      flash.now[:alert] = 'グループ名を入力してください'
       render :new
     end
   end
