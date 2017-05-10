@@ -14,6 +14,6 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:review).permit(:text)
+    params.require(:group).permit(:text)
   end
 end
