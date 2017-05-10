@@ -1,5 +1,7 @@
 = form_for @group do |f|
   .chat-group-form__field.clearfix
+    -if @group.errors.any?
+      %p エラーが発生しています
     .chat-group-form__field--left
       = f.label :name, "グループ名", class: 'chat-group-form__label'
     .chat-group-form__field--right
