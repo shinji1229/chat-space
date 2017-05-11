@@ -12,7 +12,7 @@
 
 <dl>
   <dt>Association</dt>
-  <dd>has_many :groups, through: :group_users</dd>
+  <dd>has_many :groups, through: group_users</dd>
   <dd>has_many :messages</dd>
   <dd>has_many :group_users</dd>
 </dl>
@@ -28,7 +28,7 @@
 
 <dl>
   <dt>Association</dt>
-  <dd>has_many :users, through: :group_users</dd>
+  <dd>has_many :users, through: group_users</dd>
   <dd>has_many :messages</dd>
   <dd>has_many :group_users</dd>
 </dl>
