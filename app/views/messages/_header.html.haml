@@ -1,0 +1,5 @@
+.chat-main__header_name
+  = @group.name
+.chat-main__header_member
+  Menbers:
+  = @users.pluck(:name)

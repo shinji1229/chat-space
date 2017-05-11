@@ -1,7 +1,8 @@
 class GroupsController < ApplicationController
 
+
   def index
-    @groups = Group.order("created_at DESC")
+    @groups = current_user.groups.order("created_at DESC")
   end
 
   def new
@@ -19,10 +20,16 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    group = Group.find(params[:id])
-    if group.user_id == current_user.id
-        group.edit
-      end
+   @group = Group.find(params[:id])
+  end
+
+  def update
+    if @group.update(group_params)
+      redirect_to :root, notice:'グループを編集しました'
+    else
+      flash.now[:alert] = 'グループ名を表示してください'
+      render :edit
+    end
   end
 
   private

@@ -10,14 +10,12 @@
 
 
  .chat-side__groups
-  .chat-side__groups_name tech:camp
-  .chat-side__groups_message まだメッセージはありません
+  = render @groups
 
 .chat-main
  .chat-main__header
-  %a{:href => ""} Edit
-  .chat-main__header_name tech:camp
-  .chat-main__header_member Member: shinji,yuuki
+  %a{:href => "/groups/:id/edit"} Edit
+  = render 'header'
  .chat-main__body
   .chat-main__body_name shinji
   .chat-main__body_date 2017/04/29

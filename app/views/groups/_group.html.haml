@@ -1,2 +1,5 @@
-.chat-side__groups_name = link
-.chat-side__groups_message = group.message
+=link_to group_messages_path(group) do
+  .chat-side__groups_name
+    = group.name
+  .chat-side__groups_message
+    = group.messages.last
