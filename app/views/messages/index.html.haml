@@ -17,9 +17,7 @@
   %a{:href => "/groups/:id/edit"} Edit
   = render 'header'
  .chat-main__body
-  .chat-main__body_name shinji
-  .chat-main__body_date 2017/04/29
-  .chat-main__body_message お腹すいた
+  = render @messages
  .chat-main__footer
   %form
    %textarea{:placeholder => "type a message"}
