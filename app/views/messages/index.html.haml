@@ -5,6 +5,7 @@
   .chat-side__user_name shinji
   = link_to edit_user_registration_path do
    %i.fa.fa-cog.fa-fw
+  = link_to new_group_path do
    %i.fa.fa-pencil-square-o.fa-fw
 
 
@@ -14,7 +15,7 @@
 
 .chat-main
  .chat-main__header
-  %a{:href => "/groups/new/"} Edit
+  %a{:href => ""} Edit
   .chat-main__header_name tech:camp
   .chat-main__header_member Member: shinji,yuuki
  .chat-main__body
