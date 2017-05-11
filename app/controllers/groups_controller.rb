@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
 
   def index
+    @groups = Group.order("created_at DESC")
   end
 
   def new
@@ -18,7 +19,10 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
+    group = Group.find(params[:id])
+    if group.user_id == current_user.id
+        group.edit
+      end
   end
 
   private
