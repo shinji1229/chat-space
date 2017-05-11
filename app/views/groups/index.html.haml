@@ -10,8 +10,8 @@
 
 
  .chat-side__groups
-  .chat-side__groups_name tech:camp
-  .chat-side__groups_message まだメッセージはありません
+  .chat-side__groups_name = render @group.name
+  .chat-side__groups_message = @group.message
 
 .chat-main
  .chat-main__header
