@@ -12,9 +12,12 @@
 
 .chat-main
  .chat-main__header
-  = render 'header'
+  .chat-main__header_name
+  .chat-main__header_member
  .chat-main__body
-  = render @messages
+  .chat-main__body_name
+  .chat-main__body_date
+  .chat-main__body_message
  .chat-main__footer
   %form
    %textarea{:placeholder => "type a message"}

@@ -31,6 +31,9 @@ float:left;
   &__groups{
   background-color:#2f3e51;
   height:calc(100vh - 96px);
+    a{
+    text-decoration: none;
+    }
 
     &_name{
     font-size:15px;
