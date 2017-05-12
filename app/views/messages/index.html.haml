@@ -14,7 +14,8 @@
 
 .chat-main
  .chat-main__header
-  %a{:href => "/groups/:id/edit"} Edit
+  = link_to edit_group_path(@group) do
+   Edit
   = render 'header'
  .chat-main__body
   = render @messages

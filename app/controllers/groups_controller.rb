@@ -24,7 +24,8 @@ class GroupsController < ApplicationController
   end
 
   def update
-    if @group.update(group_params)
+    group = Group.find(params[:id])
+    if group.update(group_params)
       redirect_to :root, notice:'グループを編集しました'
     else
       flash.now[:alert] = 'グループ名を表示してください'
