@@ -25,15 +25,11 @@ before_action :find_group, only: [:edit, :update]
 
   def update
     if @group.update(group_params)
-      redirect_to :root, notice:'グループを編集しました'
+      redirect_to group_messages_path(@group), notice:'グループを編集しました'
     else
       flash.now[:alert] = 'グループ名を表示してください'
       render :edit
     end
-  end
-
-  def find
-
   end
 
   private
