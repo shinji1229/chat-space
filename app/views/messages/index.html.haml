@@ -16,9 +16,4 @@
  .chat-main__body
   = render @messages
  .chat-main__footer
-  %form
-   %textarea{:placeholder => "type a message"}
-   %label{:for => "file_photo"}
-    %i.fa.fa-picture-o
-    %input#file_photo{:style => "display:none;", :type => "file"}
-   %input{:type => "submit", :value => "Send"}
+  = render 'form'

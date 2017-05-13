@@ -2,7 +2,4 @@
   .chat-side__groups_name
     = group.name
   .chat-side__groups_message
-    - if group.messages.empty?
-      まだメッセージはありません
-    - else
-      = group.messages.last
+    = group.messages.last.try(:body) ||'まだメッセージはありません'

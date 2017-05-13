@@ -76,7 +76,7 @@ float:left;
   width: calc( 100vw - 300px );
 
 
-    textarea{
+    .textarea{
       height:50px;
       width:calc( 100vw - 300px - 255px );
       margin-top:20px;
@@ -94,7 +94,7 @@ float:left;
       margin-top:20px;
     }
 
-    input{
+    .input{
       height:50px;
       width:100px;
       border:none;
