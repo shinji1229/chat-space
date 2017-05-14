@@ -1,6 +1,6 @@
 require 'rails_helper'
 describe Message do
-  let(:message) { FactoryGirl.build(:message) }
+  let(:message) { build(:message) }
   describe '#create' do
     it "is valid with a body" do
      expect(message).to be_valid
