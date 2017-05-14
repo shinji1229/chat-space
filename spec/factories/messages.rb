@@ -4,5 +4,4 @@ FactoryGirl.define do
     body              "LGTM"
     image             "LGTMLGTM.jpeg"
   end
-
 end
