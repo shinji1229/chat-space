@@ -1,7 +1,7 @@
 FactoryGirl.define do
 
   factory :message do
-    body              "LGTM"
-    image             "LGTMLGTM.jpeg"
+    body              { Faker::Lorem.sentence }
+    image             { Faker::LoremPixel.image}
   end
 end
