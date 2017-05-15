@@ -1,9 +1,9 @@
 FactoryGirl.define do
 
-  sequence(:name) { |n| "group-#{n}" }
+sequence(:name) { |n| "group-#{n}" }
 
-  factoty :group do
+  factory :group do
     name
-    end
+    created_at  { Faker::Time.between(2.days.ago, Time.now, :all) }
   end
 end

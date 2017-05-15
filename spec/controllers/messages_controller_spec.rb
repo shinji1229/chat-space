@@ -1,9 +1,23 @@
 require 'rails_helper'
 
 describe MessagesController do
+  let(:user) { create(:user) }
+  let(:message) {create(:message), user: user, group: user.groups.first}
   describe 'GET #index' do
-    context 'ログインしている場合' do
-      it '@messagesに全てのメッセージを割り当てること' do
+
+    context'ログインしていない場合' do
+
+    end
+
+    context'ユーザーがログインしていない場合' do
+    before do
+      login_user user
+      get :index
+    end
+
+
+      it 'assigns all users as @messages' do
+        expect(assigns(:message)).to match(tweets)
       end
       it '@group = Group.find(params[:group_id])' do
       end
@@ -13,12 +27,12 @@ describe MessagesController do
       end
       it '@message = Message.new' do
       end
-      it 'index画面を表示' do
+      it 'renders the :index template ' do
+        get :index
+        expect(response).to render_template :index
       end
     end
-    context 'ログインしていない場合' do
-      it 'サインイン画面を表示' do
-      end
+
     end
   end
 
@@ -27,19 +41,33 @@ describe MessagesController do
 
 
   describe 'POST #create' do
-    context 'bodyがある場合' do
-      it 'データベースに新しいメッセージが登録される' do
+    context'ログインしていない場合' do
+
+    end
+
+    context'ユーザーがログインしていない場合' do
+    before do
+      login_user user
+    end
+
+    context 'with valid params' do
+      it 'creates a new message' do
       end
-      it 'group_messages_pathにリダイレクトする' do
+      it 'assigns a newly created message as @message' do
+      end
+      it 'redirects to the group_messages_path' do
+        expect(response).to redirect_to group_messages_path
       end
 
     end
 
-    context 'bodyがない場合' do
-      it 'データベースに新しいメッセージが登録されない' do
+    context 'with invalid params' do
+      it 'assigns a newly created but unsaved user as @message' do
       end
-      it 'newテンプレートを再表示すること' do
+      it 're-renders the "index" template' do
+        expect(response).to render_template :index
       end
     end
+  end
   end
 end

@@ -1,8 +1,8 @@
 FactoryGirl.define do
 
-pass = Internet.password(8)
+  pass = Faker::Internet.password(8)
 
-  factoty :user do
+  factory :user do
     name                    { Faker::Internet.user_name }
     email                   { Faker::Internet.email }
     password                pass
