@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 describe Message do
   let(:message) { build(:message) }
   describe '#create' do
