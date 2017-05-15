@@ -9,7 +9,7 @@ FactoryGirl.define do
     password_confirmation   pass
 
     after(:create) do |user|
-      create_list(:groups, 3, users: [user])
+      create_list(:group, 3, users: [user])
     end
   end
 end
