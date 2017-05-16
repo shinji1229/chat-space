@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
 before_action :find_group, only: [:edit, :update]
 
   def index
-    @groups = current_user.groups.order("created_at DESC")
+    @groups = current_user.groups
   end
 
   def new
