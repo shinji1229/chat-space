@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
     if @message.save
       respond_to do |format|
        format.html { redirect_to group_messages_path, notice:'メッセージを作成しました' }
-       format.json { render json: @message}
+       format.json { render 'create.json.jbuilder' }
       end
 
     else
@@ -27,7 +27,7 @@ class MessagesController < ApplicationController
 
   def create_instance
     @group = Group.find(params[:group_id])
-    @groups = current_user.groups
+    @groups = current_user.groups.order("created_at DESC")
     @messages = @group.messages
     @users = @group.users
   end
