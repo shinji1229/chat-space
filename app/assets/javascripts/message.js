@@ -32,7 +32,9 @@ $(function() {
       }, 'slow', 'swing');
     })
     .fail(function() {
+      $(".input").prop("disabled", false)
       alert('メッセージを送信できませんでした');
     });
+
   });
 });
