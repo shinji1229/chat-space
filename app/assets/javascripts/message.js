@@ -27,7 +27,6 @@ $(function() {
        $('.chat-main__body').append(chat);
       $('#message_body').val('');
       $(".input").prop("disabled", false)
-      var pos = $('.chat-main__body').height();
       $('.chat-main__body').animate({
           scrollTop: $('.chat-main__body')[0].scrollHeight
       }, 'slow', 'swing');
