@@ -1,6 +1,7 @@
 .chat-side
  .chat-side__user
-  .chat-side__user_name shinji
+  .chat-side__user_name
+   = current_user.name
   = link_to edit_user_registration_path do
    %i.fa.fa-cog.fa-fw
   = link_to new_group_path do
@@ -10,18 +11,3 @@
  .chat-side__groups
   = render @groups
 
-.chat-main
- .chat-main__header
-  .chat-main__header_name
-  .chat-main__header_member
- .chat-main__body
-  .chat-main__body_name
-  .chat-main__body_date
-  .chat-main__body_message
- .chat-main__footer
-  %form
-   %textarea{:placeholder => "type a message"}
-   %label{:for => "file_photo"}
-    %i.fa.fa-picture-o
-    %input#file_photo{:style => "display:none;", :type => "file"}
-   %input{:type => "submit", :value => "Send"}
