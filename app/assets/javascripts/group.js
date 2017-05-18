@@ -1,11 +1,18 @@
 $(function(){
-  $('#group_name').on('keyup',function(e){
-    e.preventDefault();
-    var input = $('#group_name').val();
-  });
 
-  $('#group_name').on('keyup',function(e){
+  $('#group_users').on('keyup',function(e){
     e.preventDefault();
-    var input = $('#group_name').val();
+    var input = $(this).val();
+     $.ajax({
+      url: '/groups/search',
+      type: 'GET',
+      data: ,
+      processData: false,
+      contentType: false,
+      dataType: 'json'
+  })
+    .done(function(data){
+
+   })
   });
 });
