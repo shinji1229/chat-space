@@ -1,6 +1,0 @@
-= form_for [@group,@message] do |f|
- = f.text_field :body, placeholder: "type a message",class: 'textarea'
- = f.label :image do
-  = f.file_field :image, style: "display:none;"
-  %i.fa.fa-picture-o
- = f.submit "Send", class: 'input'
