@@ -3,37 +3,37 @@ width: calc( 100vw - 300px );
 height: 100vh;
 float:left;
   &__header{
-  height:96px;
+  height: 96px;
   border: 1px solid #eee;
   width: calc( 100vw - 300px );
 
     a{
-      display:block;
-      height:40px;
-      border:solid 1px $blue;
-      margin-top:28px;
-      margin-right:40px;
-      padding-right:20px;
-      padding-left:20px;
-      line-height:40px;
-      color:$blue;
-      float:right;
-      text-decoration:none;
+      display: block;
+      height: 40px;
+      border: solid 1px $blue;
+      margin-top: 28px;
+      margin-right: 40px;
+      padding-right: 20px;
+      padding-left: 20px;
+      line-height: 40px;
+      color: $blue;
+      float: right;
+      text-decoration: none;
 
     }
 
     &_name{
-    font-size:20px;
-    color:#333333;
-    margin-top:0;
-    margin-left:40px;
-    padding-top:35px;
+    font-size: 20px;
+    color: #333333;
+    margin-top: 0;
+    margin-left: 40px;
+    padding-top: 35px;
 
     }
     &_member{
-    font-size:12px;
-    color:#999999;
-    margin-left:40px;
+    font-size: 12px;
+    color: #999999;
+    margin-left: 40px;
 
 
     }
@@ -42,68 +42,68 @@ float:left;
   &__body{
   height: calc( 100vh - 96px - 90px);
   width: calc( 100vw - 300px );
-  overflow:auto;
+  overflow: auto;
 
     &_name{
-    font-size:16px;
-    color:#434A54;
-    margin-top:46px;
-    margin-right:10px;
-    margin-left:40px;
-    float:left;
+    font-size: 16px;
+    color: #434A54;
+    margin-top: 46px;
+    margin-right: 10px;
+    margin-left: 40px;
+    float: left;
     }
 
     &_date{
-    font-size:12px;
-    color:#999999;
-    margin-top:46px;
-    float:left;
+    font-size: 12px;
+    color: #999999;
+    margin-top: 46px;
+    float: left;
     }
 
     &_message{
-    font-size:14px;
-    color:#434A54;
-    margin-left:40px;
+    font-size: 14px;
+    color: #434A54;
+    margin-left: 40px;
     margin-top: 0;
-    margin-bottom:40px;
-    padding-top:10px;
-    clear:both;
+    margin-bottom: 40px;
+    padding-top: 10px;
+    clear: both;
     }
   }
 
   &__footer{
-  background-color:#B8C3C7;
-  height:90px;
+  background-color: #B8C3C7;
+  height: 90px;
   width: calc( 100vw - 300px );
 
 
     .textarea{
-      height:50px;
-      width:calc( 100vw - 300px - 255px );
-      margin-top:20px;
-      margin-left:40px;
-      padding-left:10px;
-      line-height:50px;
-      float:left;
-      border:none;
-      resize:none;
+      height: 50px;
+      width: calc( 100vw - 300px - 255px );
+      margin-top: 20px;
+      margin-left: 40px;
+      padding-left: 10px;
+      line-height: 50px;
+      float: left;
+      border: none;
+      resize: none;
     }
 
     .fa{
-      padding:17px;
-      background-color:$white;
-      margin-top:20px;
+      padding: 17px;
+      background-color: $white;
+      margin-top: 20px;
     }
 
     .input{
-      height:50px;
-      width:100px;
-      border:none;
-      color:$white;
-      background-color:$blue;
-      float:right;
-      margin-top:20px;
-      margin-right:40px;
+      height: 50px;
+      width: 100px;
+      border: none;
+      color: $white;
+      background-color: $blue;
+      float: right;
+      margin-top: 20px;
+      margin-right: 40px;
     }
   }
 }
