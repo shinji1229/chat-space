@@ -7,6 +7,10 @@ $(function() {
     return html;
   }
 
+   function scrollMessage(){
+     $('.chat-main__body').animate({ scrollTop: $('.chat-main__body')[0].scrollHeight}, 'slow', 'swing');
+   }
+
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var textField = $('#message_body');
@@ -23,12 +27,10 @@ $(function() {
     })
     .done(function(data) {
       var chat = buildHTML(data);
-       $('.chat-main__body').append(chat);
+      $('.chat-main__body').append(chat);
       $('#message_body').val('');
       $(".input").prop("disabled", false)
-      $('.chat-main__body').animate({
-          scrollTop: $('.chat-main__body')[0].scrollHeight
-      }, 'slow', 'swing');
+      scrollMessage();
     })
     .fail(function() {
       $(".input").prop("disabled", false)
