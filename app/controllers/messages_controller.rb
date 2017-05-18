@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
     if @message.save
       respond_to do |format|
        format.html { redirect_to group_messages_path, notice:'メッセージを作成しました' }
-       format.json { render 'create.json.jbuilder' }
+       format.json
       end
 
     else
