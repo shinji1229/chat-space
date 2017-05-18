@@ -22,7 +22,6 @@ $(function() {
       dataType: 'json'
     })
     .done(function(data) {
-      console.log('成功')
       var chat = buildHTML(data);
        $('.chat-main__body').append(chat);
       $('#message_body').val('');
