@@ -32,6 +32,10 @@ before_action :find_group, only: [:edit, :update]
     end
   end
 
+  def search
+    @users = User.where('title LIKE(?)', "%#{params[:keyword]}%")
+  end
+
   private
   def group_params
     params.require(:group).permit(:name, user_ids: [])
