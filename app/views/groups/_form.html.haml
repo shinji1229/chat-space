@@ -10,17 +10,17 @@
       .chat-group-form__field--left
         = f.label :users, "チャットメンバーを追加", class: 'chat-group-form__label'
       .chat-group-form__field--right
-        = f.text_field :users, placeholder: :"追加したいユーザーを入力してください", class: 'chat-group-form__input'
-    .chat-group-form__search.clearfix
-      #user-search-result
+        = f.text_field :users, value: '', placeholder: :"追加したいユーザーを入力してください", class: 'chat-group-form__input'
+        #user-search-result
+
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.label :name, 'チャットメンバー', class: 'chat-group-form__label'
+        = f.label :users, 'チャットメンバー', class: 'chat-group-form__label'
       .chat-group-form__field--right
-      #chat-group-users
-      .chat-group-user.clearfix
-        = f.collection_check_boxes(:user_ids, User.all, :id, :name)
-      #user-search-result
+        #chat-group-users
+          %p.chat-group-user__name
+            = current_user.name
+
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right

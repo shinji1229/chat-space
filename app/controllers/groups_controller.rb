@@ -33,7 +33,10 @@ before_action :find_group, only: [:edit, :update]
   end
 
   def search
-    @users = User.where('title LIKE(?)', "%#{params[:keyword]}%")
+    @users = User.where('name LIKE(?)', "%#{ params[:keyword] }%")
+    respond_to do |format|
+      format.json
+    end
   end
 
   private
