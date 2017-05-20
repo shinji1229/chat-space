@@ -48,9 +48,9 @@ $(document).on('turbolinks:load', function() {
 // ユーザーを追加する
   $('#user-search-result').on('click', '.user-search-add', function(e) {
     e.preventDefault();
-    var id = $(this).data('user-id');
-    var name = $(this).data('user-name');
-    var member = buildMember(id, name);
+    var id      =  $(this).data('user-id');
+    var name    =  $(this).data('user-name');
+    var member  =  buildMember(id, name);
     $('#chat-group-users').append(member);
     $(this).parent().remove();
   });
