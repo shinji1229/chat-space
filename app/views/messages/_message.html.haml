@@ -4,3 +4,5 @@
   = message.created_at
 .chat-main__body_message
   = message.body
+.chat-main__body_image
+  = message.try(:image)
