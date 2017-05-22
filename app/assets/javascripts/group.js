@@ -1,5 +1,7 @@
 $(document).on('turbolinks:load', function() {
 
+  var preWord;
+
 // ユーザー検索結果とユーザーに付随する追加ボタンを作成
   function appendList(user) {
     var html =
@@ -28,21 +30,28 @@ $(document).on('turbolinks:load', function() {
   $('#group_users').on('keyup',function(e){
     e.preventDefault();
     var input = $.trim($(this).val());
-     $.ajax({
-      url: '/groups/search',
-      type: 'GET',
-      data: ('keyword=' + input),
-      processData: false,
-      contentType: false,
-      dataType: 'json'
-    })
-
-    .done(function(data){
+    if (input != preWord){
       $('#user-search-result').find('.chat-group-user').remove();
-      $(data).each(function(i, user){
-        appendList(user)
-      });
-    });
+      if (input.length !== 0){
+       $.ajax({
+        url: '/groups/search',
+        type: 'GET',
+        data: ('keyword=' + input),
+        processData: false,
+        contentType: false,
+        dataType: 'json'
+       })
+
+        .done(function(data){
+          if(data.length !== 0){
+            $(data).each(function(i, user){
+              appendList(user)
+            });
+          }
+        })
+      }
+    }
+    preWord = input;
   });
 
 // ユーザーを追加する
@@ -57,7 +66,6 @@ $(document).on('turbolinks:load', function() {
 
 // ユーザーを取り除く
   $('#chat-group-users').on('click','.user-search-remove', function(){
-    var id = $(this).data('user-id');
     $(this).parent().remove();
   });
 });
