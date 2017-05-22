@@ -33,9 +33,7 @@ before_action :find_group, only: [:edit, :update]
   end
 
   def search
-    @users_except_current_user = User.where.not(id: current_user.id)
-    @users = @users_except_current_user.search_user(params[:keyword])
-    # @users = User. where('name LIKE(?)', "%#{ params[:keyword] }%").where.not(id: current_user.id)
+    @users = User.where.not(id: current_user.id).search_user(params[:keyword])
     respond_to do |format|
       format.json
     end
