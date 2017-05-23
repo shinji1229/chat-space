@@ -15,6 +15,9 @@ CarrierWave.configure do |config|
     when 'development'
         config.fog_directory  = 'ここにバケット名を入れます'
         config.asset_host = 'https://s3.amazonaws.com/ここにバケット名を入れます'
+    when 'test'
+        config.fog_directory  =
+        config.asset_host = 'https://s3.amazonaws.com/'
     when 'production'
         config.fog_directory  = 'ここにバケット名を入れます'
         config.asset_host = 'https://s3.amazonaws.com/ここにバケット名を入れます'
