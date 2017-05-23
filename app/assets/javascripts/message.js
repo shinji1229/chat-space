@@ -5,10 +5,12 @@ $(function() {
       message_Image = `<img src="${message.image.url}" class="chat-main__body_chat-image">`;
     }
     var html = `
+      <div class="chat__body">
         <div class="chat-main__body_chat-name">${message.name}</div>
         <div class="chat-main__body_chat-date">${message.date}</div>
         <div class="chat-main__body_chat-message">${message.body}</div>
         ${message_Image}
+      </div>
         `;
     return html;
   }
