@@ -1,24 +1,24 @@
 .chat-side
- .chat-side__user
-  .chat-side__user_name
-   = current_user.name
-  = link_to edit_user_registration_path do
-   %i.fa.fa-cog.fa-fw
-  = link_to new_group_path do
-   %i.fa.fa-pencil-square-o.fa-fw
+  .chat-side__user
+    .chat-side__user_name
+      = current_user.name
+    = link_to edit_user_registration_path do
+      %i.fa.fa-cog.fa-fw
+    = link_to new_group_path do
+      %i.fa.fa-pencil-square-o.fa-fw
 
- .chat-side__groups
-  = render @groups
+  .chat-side__groups
+    = render @groups
 
 .chat-main
- .chat-main__header
-  = render 'header'
- .chat-main__body
-  = render @messages
- .chat-main__footer
-  = form_for [@group,@message] do |f|
-   = f.text_field :body, placeholder: "type a message",class: 'textarea'
-   = f.label :image do
-    = f.file_field :image, style: "display:none;"
-    %i.fa.fa-picture-o
-   = f.submit "Send", class: 'input'
+  .chat-main__header
+    = render 'header'
+  .chat-main__body
+    = render @messages
+  .chat-main__footer
+    = form_for [@group,@message] do |f|
+      = f.text_field :body, placeholder: "type a message",class: 'textarea'
+      = f.label :image do
+        = f.file_field :image, style: "display:none;"
+        %i.fa.fa-picture-o
+      = f.submit "Send", class: 'input'
