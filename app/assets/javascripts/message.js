@@ -1,9 +1,17 @@
 $(function() {
    function buildHTML(message) {
+    var message_Image = '';
+    if (message.image) {
+      message_Image = `<img src="${message.image.url}" class="chat-main__body_chat-image">`;
+    }
     var html = `
-        <div class="chat-main__body_name">${message.name}</div>
-        <div class="chat-main__body_date">${message.date}</div>
-        <div class="chat-main__body_message">${message.body}</div>`;
+      <div class="chat__body">
+        <div class="chat-main__body_chat-name">${message.name}</div>
+        <div class="chat-main__body_chat-date">${message.date}</div>
+        <div class="chat-main__body_chat-message">${message.body}</div>
+        ${message_Image}
+      </div>
+        `;
     return html;
   }
 
@@ -14,21 +22,19 @@ $(function() {
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var textField = $('#message_body');
-    var message = textField.val();
+    var message = new FormData($(this).get(0));
     $.ajax({
       type: 'POST',
       url: './messages',
-      data: {
-        message: {
-          body: message
-        }
-      },
-      dataType: 'json'
+      data: message,
+      dataType: 'json',
+      processData: false,
+      contentType: false
     })
     .done(function(data) {
       var chat = buildHTML(data);
       $('.chat-main__body').append(chat);
-      $('#message_body').val('');
+      textField.val('');
       $(".input").prop("disabled", false)
       scrollMessage();
     })
