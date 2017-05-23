@@ -8,18 +8,18 @@ CarrierWave.configure do |config|
     provider: 'AWS',
     aws_access_key_id: ENV['ACCESS_KEY_ID'],
     aws_secret_access_key: ENV['SECRET_ACCESS_KEY'],
-    region: 'us-east-1'
+    region: 'ap-northeaset-1 '
   }
 
     case Rails.env
     when 'development'
-        config.fog_directory  = 'ここにバケット名を入れます'
-        config.asset_host = 'https://s3.amazonaws.com/ここにバケット名を入れます'
+        config.fog_directory  = ENV['BUCKET_NAME']
+        config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chat-space-shinji'
     when 'test'
-        config.fog_directory  =
-        config.asset_host = 'https://s3.amazonaws.com/'
+        config.fog_directory  = ENV['BUCKET_NAME']
+        config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chat-space-shinji'
     when 'production'
-        config.fog_directory  = 'ここにバケット名を入れます'
-        config.asset_host = 'https://s3.amazonaws.com/ここにバケット名を入れます'
+        config.fog_directory  = ENV['BUCKET_NAME']
+        config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chat-space-shinji'
     end
 end
