@@ -75,4 +75,7 @@ $(function() {
     {
     setInterval(reloadIndex,2000);
   }
+  else(){
+    clearInterval();
+  }
 });
